@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 반응형은 뷰포트 무조건 있어야함 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 손세영 - itsix 웹에이젼시 반응형 웹 </title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shoutcut icon" href="./images/fv.png">
+
+    <!-- font-awesome 공식사이트 - https://fontawesome.com/ -->
+    <!-- <link rel="stylesheet" data-purpose="Layout StyleSheet" title="Web Awesome"
+        href="/css/app-wa-2e45578ecf3b28ce6383d10b8c0bf4d0.css?vsn=d"> -->
+ 
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.0/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.0/css/sharp-thin.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.0/css/sharp-solid.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.0/css/sharp-regular.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.0/css/sharp-light.css">
+
+    <script src="./js/jquery-1.11.3.min.js"></script>
+    <script src="./js/itsix.js"></script>
+</head>
+
+<body>
+    <!-- #wrap>header+main -->
+    <div id="wrap">
+        <!-- ========== header ========== -->
+        <header>
+            <!-- logo -->
+            <!-- h1.logo>a>img -->
+            <h1 class="logo">
+                <a href="#">
+                    <img src="./images/logo.png" alt="로고">
+                </a>
+            </h1>
+            <!-- pc menu -->
+            <!-- ul.menu>li*3>a -->
+            <ul class="menu">
+                <li><a href="#mainImg">ABOUT ITSIX</a></li>
+                <li><a href="#portfolio">OUR WORK</a></li>
+                <li><a href="#redcarpet2">CONTACT US</a></li>
+            </ul>
+            <!-- mobile menu -->
+            <ul class="m_menu">
+                <li><a href="#mainImg">ABOUT ITSIX</a></li>
+                <li><a href="#portfolio">OUR WORK</a></li>
+                <li><a href="#redcarpet2">CONTACT US</a></li>
+
+                <!-- x 버튼 -->
+                <!-- eq(3) -->
+                <li><a href="#"><i class="fa-regular fa-xmark"></i></a></li>
+
+            </ul>
+            <!-- right menu -->
+            <!-- ul.rightmenu>li>a>img -->
+            <ul class="rightmenu">
+                <li>
+                    <a href="#">
+                        <img src="./images/top-right-menu-request.png" alt="menu-request">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./images/top-right-menu-extranet.png" alt="menu-extranet">
+                    </a>
+                </li>
+
+                <!-- li>a>i.fa.fa-bars -->
+                <!-- 햄버거버튼 -->
+                <!-- .eq(2) -->
+                <li><a href="#"><i class="fa-regular fa-bars"></i></a></li>
+            </ul>
+        </header>
+        <!-- ========== main ========== -->
+        <main>
+            <!-- section#mainImg>h2.blind{메인 이미지} -->
+            <section id="mainImg">
+                <h2 class="blind">메인 이미지</h2>
+                <!-- 배경 흐림 효과 -->
+                <!-- .main_center>ul.center_bg>li*7>a>img -->
+                <div class="main_center">
+                    <ul class="center_bg">
+                        <li><a href="#"><img src="./images/s-01-01.png" alt="배경이미지1"></a></li>
+                        <li><a href="#"><img src="./images/s-01-02.png" alt="배경이미지2"></a></li>
+                        <li><a href="#"><img src="./images/s-01-03.png" alt="배경이미지3"></a></li>
+                        <li><a href="#"><img src="./images/s-01-04.png" alt="배경이미지4"></a></li>
+                        <li><a href="#"><img src="./images/s-01-05.png" alt="배경이미지5"></a></li>
+                        <li><a href="#"><img src="./images/s-01-06.png" alt="배경이미지6"></a></li>
+                        <li><a href="#"><img src="./images/main_center.png" alt="배경이미지7"></a></li>
+                    </ul>
+                </div>
+                <!-- 육각형 애니메이션 이미지 (빨강,그레이) -->
+                <!-- .hexagon>ul>li.hexagon_g>a>img -->
+                <div class="hexagon">
+                    <ul>
+                        <li class="hexagon_g">
+                            <a href="#">
+                                <img src="./images/gray.png" alt="회색 육각형">
+                            </a>
+                        </li>
+                        <li class="hexagon_r">
+                            <a href="#">
+                                <img src="./images/red.png" alt="빨강 육각형">
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- center text -->
+                    <!-- p>span -->
+                    <p>ITSIX
+                        <span>
+                            SIXTH SENSE FOR CONNECTION
+                        </span>
+                    </p>
+
+                </div>
+            </section>
+            <!-- 레드카펫1 - 서비스 소개 -->
+            <section id="redcarpet">
+                <!-- left - 투명박스 -->
+                <div class="leftside"></div>
+
+                <!-- right - 서비스 4종 소개 -->
+                <!-- .rightside>.about>h2.service  -->
+                <div class="rightside">
+                    <div class="about">
+                        <h2 class="service">Our Services</h2>
+                        <!-- 서비스 4가지 -->
+                        <!-- ul>li>a -->
+                        <ul>
+                            <!-- 1 -->
+                            <li>
+                                <a href="#">
+                                    <!-- img+strong+p+span -->
+                                    <img src="./images/service-ico-01.png" alt="서비스1">
+                                    <strong>귀 기울여 듣는 마인드</strong>
+                                    <p>STRATEGY &amp; PLANNING</p>
+                                    <span>ITSIX는 수많은 경험으로 쌓아온 전문성과 판단력으로 고객들의 생각을 적극적으로 수용하고 니즈를 파악하여 체계적으로 기획합니다.
+                                    </span>
+                                </a>
+                            </li>
+                            <!-- 2 -->
+                            <li>
+                                <a href="#">
+                                    <img src="./images/service-ico-02.png" alt="서비스2">
+                                    <strong>눈으로 쫓는 트렌드</strong>
+                                    <p>DESIGN</p>
+                                    <span>
+                                        ITSIX만의 스타일로 귀사의 아이덴티티를 탄생시키며,
+                                        사용자 중심의 UI/UX를 기본으로 트랜드에 맞춰 감각적이고
+                                        창의적인 디자인을 합니다.
+                                    </span>
+                                </a>
+                            </li>
+                            <!-- 3 -->
+                            <li>
+                                <a href="#">
+                                    <img src="./images/service-ico-03.png" alt="서비스3">
+                                    <strong>손끝으로 담아내는 기술</strong>
+                                    <p>DEVELOPMENT</p>
+                                    <span>
+                                        ITSIX는 개발에 대한 명확한 이해와 전문성으로 높은 수준의 서비스를 제공하며,
+                                        웹 표준을 기반으로 최적화된 서비스 환경이 될 수 있도록 개발합니다.
+                                    </span>
+                                </a>
+                            </li>
+                            <!-- 4 -->
+                            <li>
+                                <a href="#">
+                                    <img src="./images/service-ico-04.png" alt="서비스4">
+                                    <strong>유지보수</strong>
+                                    <p>MAINTENANCE</p>
+                                    <span>
+                                        웹사이트는 생명이 있는 유기체 입니다.
+                                        방문하는 네티즌들에게 적절히 반응하고 변화에 대응하기 위하여 프로그래밍 및 디자인 부문에서 서비스 하고 있습니다.
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- section#portfolio -->
+            <section id="portfolio">
+                <!-- .work>.cover>h2.pf -->
+                <div class="work">
+                    <div class="cover">
+                        <h2 class="pf">
+                            Our Portfolio
+                        </h2>
+                    </div>
+                    <!-- pf images -->
+                    <!-- .port_cover>ul.cf>li*5>a>img -->
+                    <div class="port_cover">
+                        <ul class="cf">
+
+                            <li>
+                                <!-- img -->
+                                <a href="#">
+                                    <img src="./images/thmb-36.png" alt="JUSE TV Desktop">
+                                </a>
+
+                                <!-- text -->
+                                <!-- p+span.gray -->
+                                <p>JUSE TV Desktop / Mobile 사이트 구축</p>
+                                <span class="gray">(주)프리에이티브</span>
+                            </li>
+
+
+
+                            <li>
+                                <a href="#">
+                                    <img src="./images/thmb-35.png" alt="코스메인 쇼핑몰 구축">
+                                </a>
+                                <!-- 사이트설명 -->
+
+
+                                <p>코스메인 쇼핑몰 구축</p>
+                                <span class="gray">(주)동우씨엠</span>
+
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./images/thmb-38.jpg" alt="ROOKIE ASIA M-STYLE SHIW사이트 구축">
+                                </a>
+                                <!-- 사이트설명 -->
+                                <p>ROOKIE ASIA M-STYLE SHIW사이트 구축</p>
+                                <span class="gray">ROOKIE ASIA M-STYLE SHIW</span>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./images/thmb-37.jpg" alt="Sopnida 사이트 구축 메인부문">
+                                </a>
+                                <!-- 사이트설명 -->
+
+                                <p>Sopnida 사이트 구축 메인부문</p>
+                                <span class="gray">(주)CK Globalnet</span>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <img src="./images/thmb-34.png" alt="더마젝 사이트 구축">
+                                </a>
+                                <!-- 사이트설명 -->
+                                <!-- p+span.gray -->
+                                <p>더마젝 사이트 구축</p>
+                                <span class="gray">(주)더마젝</span>
+                            </li>
+
+
+
+                            <!-- 2 -->
+                            <li><a href="#"><img src="./images/thmb-33.png" alt="솔라휴먼 사이트 구축"></a>
+                                <p>솔라휴먼 사이트 구축</p>
+                                <span class="gray">딘월드</span>
+                            </li>
+                            <li><a href="#"><img src="./images/thmb-32.png" alt="서울시 직장맘 지원센터 사이트 "></a>
+                                <p>서울시 직장맘 지원센터 사이트 구축</p>
+                                <span class="gray">서울시 직장맘 지원센터</span>
+                            </li>
+                            <li><a href="#"><img src="./images/thmb-31.png" alt="마가뮤직 사이트"></a>
+                                <p>마가뮤직 사이트 구축</p>
+                                <span class="gray">(주)마가뮤직</span>
+                            </li>
+                            <li><a href="#"><img src="./images/thmb-01.jpg" alt="데미소다 황금상자 이벤트"></a>
+                                <p>데미소다 "황금상자" 이벤트</p>
+                                <span class="gray">(주)데미소다</span>
+                            </li>
+                            <li><a href="#"><img src="./images/thmb-02.jpg" alt="서문교회 Desktop / Mobile 사이트"></a>
+                                <p>서문교회 Desktop / Mobile 사이트 구축</p>
+                                <span class="gray">서문교회</span>
+                            </li>
+
+                            <!-- 3 -->
+                            <li><a href="#"><img src="./images/thmb-03.png" alt="아이브레인 리뉴얼"></a>
+                                <p>아이브레인 사이트 리뉴얼</p>
+                                <span class="gray">(주)아이브레인</span>
+                            </li>
+                            <li><a href="#"><img src="./images/thmb-04.png" alt="지에스티지글로벌 사이트"></a>
+                                <p>지에스티지글로벌 사이트 구축</p>
+                                <span class="gray">(주)지에스티지</span>
+                            </li>
+                            <li><a href="#"><img src="./images/thmb-05.png" alt="ART n TOY GALLERY 사이트"></a>
+                                <p>ART n TOY GALLERY 사이트 구축</p>
+                                <span class="gray">(주)아트앤토이 갤러리</span>
+                            </li>
+                            <li><a href="#"><img src="./images/thmb-06.png" alt="BR뇌교육 Desktop / Mobile 사이트"></a>
+                                <p>BR뇌교육 Desktop / Mobile 사이트 구축</p>
+                                <span class="gray">(주)비알뇌교육</span>
+                            </li>
+                            <li><a href="#"><img src="./images/thmb-07.png" alt="청소년인성교육협회 사이트"></a>
+                                <p>청소년인성교육협회 사이트 구축</p>
+                                <span class="gray">청소년인성교육협회</span>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <!-- 폿폴배경 -->
+                    <!-- ul.port_bg>li*4>img -->
+                    <ul class="port_bg">
+                        <li><img src="./images/s-01-06.png" alt="bg1"></li>
+                        <li><img src="./images/s-01-02.png" alt="bg3"></li>
+                        <li><img src="./images/s-01-03.png" alt="bg4"></li>
+                    </ul>
+                </div>
+            </section>
+            <!-- 회사 연락처, 프로젝트 요청서 다운받기 -->
+            <!-- section#redcarpet2 -->
+            <section id="redcarpet2">
+                <!-- .redside -->
+                <!-- 왼쪽 투명 배경 -->
+                <div class="redside"></div>
+                <div class="redrightside">
+                    <!-- .contactus>h2.contact -->
+                    <div class="contactus">
+                        <h2 class="contact">
+                            Contact Us
+                        </h2>
+                        <!-- 회사주소 -->
+                        <!-- .add>ul>li*4>strong+a -->
+                        <div class="add">
+                            <ul>
+                                <li><strong>Address </strong> 서울시 금천구 범안로 1130 디지털엠파이어빌딩 607호 아이티식스 </li>
+                                <li><strong>Tel </strong><a href="tel:02-852-1846">02-852-1846</a></li>
+                                <li><strong>Fax </strong><a href="#">02-858-1846</a></li>
+                                <li><strong>E-mail </strong><a href="mailto:hcjung@itsix.co.kr">hcjung@itsix.co.kr</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 프로젝트 요청 버튼 -->
+                    <!-- .pro>i.fa.fa-book+a -->
+                    <div class="pro">
+                        <i class="fa fa-book"></i>
+                        <a href="#">PROJECT REQUEST</a></div>
+                </div>
+                <!-- map -->
+                <!-- #map_cover>.map_view -->
+                <div id="map_cover">
+                    <div class="map_view">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3166.802011760505!2d126.88492947645693!3d37.465396329920225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b61e98f3cf285%3A0xadf9300476f3155d!2z7ISc7Jq47Yq567OE7IucIOq4iOyynOq1rCDrspTslYjroZwgMTEzMA!5e0!3m2!1sko!2skr!4v1702449570687!5m2!1sko!2skr"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <!-- 주소 -->
+                    <footer>
+                        <!-- .footer_cover>p -->
+                        <div class="footer_cover">
+                            <p>
+                                <strong>SIXTH SENSE FOR CONNECTION</strong>
+                            <br> &copy; 2023 <a href="mailto:hcjung@itsix.co.kr">ITSIX.</a>
+                            SEYOUNG. ALL Rights Reserved.
+                        </p>
+                        </div>
+                    </footer>
+                </div>
+            </section>
+
+        </main>
+    </div>
+</body>
+
+</html>

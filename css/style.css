@@ -1,0 +1,953 @@
+@charset "UTF-8";
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a img {
+    border: 0;
+}
+
+/* 가려줌 */
+.blind {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-indent: -99999999999999px;
+    width: 0;
+    height: 0;
+    font-size: 0;
+}
+
+body {
+    font-family: 'Sarabun';
+    background-color: #333;
+}
+
+#wrap {
+    width: 100%;
+    background: url("../images/bg-main.png")no-repeat center/cover;
+}
+
+/* ========== header ==========*/
+#wrap header {
+    width: 100%;
+    height: 100px;
+    background-color: #fff;
+    border-bottom: 1px solid #aaa;
+    position: fixed;
+    z-index: 9;
+}
+
+#wrap header h1.logo {
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#wrap header h1.logo img {
+    width: 110px;
+    display: block;
+}
+
+/* pc menu */
+#wrap header ul.menu {
+    width: 500px;
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+#wrap header ul.menu li {
+    width: 33.33%;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+}
+
+#wrap header ul.menu li a {
+    display: block;
+    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#wrap header ul.menu li a:hover,
+#wrap header ul.menu li a:focus {
+    color: #eb150a;
+}
+
+/* mobile menu - x, toggle - PC구조에서 가려줌 */
+
+#wrap header ul.m_menu {
+    display: none;
+    /* 가려줌 */
+}
+
+/* x btn */
+#wrap header ul.m_menu i {
+    position: absolute;
+    right: -25px;
+    top: 5px;
+}
+
+/* toggle (햄버거) btn */
+#wrap header ul.rightmenu li:nth-child(3) {
+    display: none;
+    /* 가려줌 */
+}
+
+
+/* right menu */
+#wrap header ul.rightmenu {
+    display: flex;
+    gap: 30px;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 150px;
+    height: 50px;
+    /* border:1px solid red; */
+}
+
+
+
+/* ========== main - 5단 PC구조 ========== */
+
+/* 돌아가는 육각형 메인 이미지 */
+#wrap main section#mainImg {
+    width: 100%;
+    height: 1000px;
+    position: relative;
+    overflow: hidden;
+}
+
+#wrap main section#mainImg .main_center {
+    width: 100%;
+    height: 1000px;
+    position: relative;
+}
+
+#wrap main section#mainImg .main_center ul.center_bg {
+    width: 100%;
+    height: 100%;
+}
+
+#wrap main section#mainImg .main_center ul.center_bg li {
+    position: absolute;
+}
+
+.main_center ul.center_bg li:nth-child(1) {
+    right: 0;
+    top: -100px;
+}
+
+.main_center ul.center_bg li:nth-child(2) {
+    right: 25px;
+    top: 80px;
+}
+
+.main_center ul.center_bg li:nth-child(3) {
+    bottom: 250px;
+    left: 40%;
+}
+
+.main_center ul.center_bg li:nth-child(4) {
+    bottom: 60px;
+    left: 2%;
+}
+
+.main_center ul.center_bg li:nth-child(5) {
+    right: -50px;
+    top: 10px;
+}
+
+.main_center ul.center_bg li:nth-child(6) {
+    left: 0;
+    bottom: -60px;
+}
+
+.main_center ul.center_bg li:nth-child(7) {
+    position: fixed;
+    left: 50%;
+    top: 48%;
+    transform: translate(-50%, -50%);
+}
+
+.main_center ul.center_bg img {
+    width: 100%;
+    height: auto;
+}
+
+
+/* 육각형 돌리기 - @keyframes */
+.hexagon {
+    position: fixed;
+    top: 60%;
+    /* 수정 */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 700px;
+}
+
+.hexagon ul {
+    width: 100%;
+    height: 100%;
+}
+
+.hexagon ul li {
+    position: absolute;
+    width: 80%;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* 기준점 중앙으로 배치 */
+    transform-origin: center;
+}
+
+.hexagon ul li img {
+    display: block;
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+}
+
+
+.hexagon ul li.hexagon_g {
+    /* infinite - 무한반복 */
+    /* linear - 일정속도, 선형으로 */
+    animation: hg 20s infinite linear;
+}
+
+@keyframes hg {
+
+    /* 0% 시작지점 */
+    0% {
+        transform: translateX(-50%) rotate(0deg);
+    }
+
+    /* 100% 끝지점 */
+    100% {
+        /* 360으로 하게되면, 미세한 깜빡임 오류 생김 */
+        /* 359로 하게되면, 한바퀴 도는 것에서 조금 덜 돌아감 */
+
+        transform: translateX(-50%) rotate(359deg);
+    }
+}
+
+/* 육각형 - 빨강 */
+
+.hexagon ul li.hexagon_r {
+    /* infinite - 무한반복 */
+    /* linear - 일정속도, 선형으로 */
+    animation: hr 18s infinite linear;
+}
+
+@keyframes hr {
+
+    /* 0% 시작지점 */
+    0% {
+        transform: translateX(-50%) rotate(0deg);
+    }
+
+    /* 100% 끝지점 */
+    100% {
+        /* 360으로 하게되면, 미세한 깜빡임 오류 생김 */
+        /* 359로 하게되면, 한바퀴 도는 것에서 조금 덜 돌아감 */
+
+        transform: translateX(-50%) rotate(-359deg);
+    }
+}
+
+/* center text */
+.hexagon p {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 140px;
+    font-weight: bold;
+    color: #eb150a;
+    width: 100%;
+}
+
+.hexagon p span {
+    font-size: 22px;
+    color: #333;
+    display: block;
+}
+
+/* 레드카펫 */
+#redcarpet {
+    width: 100%;
+    height: 750px;
+    position: relative;
+    z-index: 2;
+    /* display: none; */
+}
+
+/* 왼쪽 투명박스 */
+#redcarpet .leftside {
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    top: -25%;
+    left: 0;
+    background-color: rgba(255, 0, 0, 0.2);
+    transform: skewY(15deg);
+    /* 수직 15도 기울임 */
+}
+
+
+/* 오른쪽 빨강박스 */
+#redcarpet .rightside {
+    width: 100%;
+    height: 800px;
+    position: absolute;
+    top: -28%;
+    right: 0;
+    background-color: #eb150a;
+    transform: skewY(-15deg);
+}
+
+/* 서비스 제목 */
+.rightside h2.service {
+    transform: skewY(15deg) translateX(-50%);
+    position: absolute;
+    width: 340px;
+    top: 20%;
+    left: 50%;
+    font-size: 54px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+}
+
+/* 제목 좌우 라인 */
+h2.service::before {
+    content: '';
+    display: block;
+    /* 보여줌 */
+    width: 200px;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    left: -60%;
+    top: 55%;
+}
+
+h2.service::after {
+    content: '';
+    display: block;
+    /* 보여줌 */
+    width: 200px;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    right: -60%;
+    top: 55%;
+}
+
+/* 서비스 4종 배치 */
+#redcarpet .rightside ul {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: skewY(15deg) translateX(-50%);
+    width: 80%;
+    height: 400px;
+}
+
+#redcarpet .rightside ul li {
+    float: left;
+    width: 22%;
+    margin-left: 3%;
+    text-align: center;
+    color: #fff;
+}
+
+#redcarpet .rightside ul li a {
+    color: #fff;
+}
+
+#redcarpet .rightside ul li a img {
+    width: 50%;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+    /* 상, 좌우, 하 */
+}
+
+#redcarpet .rightside ul li a strong {
+    font-size: 20px;
+    letter-spacing: -1px;
+}
+
+#redcarpet .rightside ul li a p {
+    font-size: 13px;
+    margin: 10px 0 15px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#redcarpet .rightside ul li a span {
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* 포트폴리오 - 5단 */
+section#portfolio {
+    width: 100%;
+    /* height: 1300px; */
+    height: auto;
+    background-color: #fff;
+    position: relative;
+    margin-top: -800px;
+    padding: 200px 0;
+    /* 상하 좌우 */
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* 폿폴제목 */
+section#portfolio .cover {
+    width: 100%;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.cover h2.pf {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+    width: 340px;
+    font-size: 44px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+}
+
+.cover h2.pf::before {
+    content: '';
+    display: block;
+    /* 보기 */
+    position: absolute;
+    left: -60%;
+    top: 55%;
+    width: 200px;
+    height: 2px;
+    background-color: #333;
+}
+
+.cover h2.pf::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: -60%;
+    top: 55%;
+    width: 200px;
+    height: 2px;
+    background-color: #333;
+}
+
+.port_cover {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.port_cover ul {
+    display: flex;
+    flex-wrap: wrap;
+    /* 여러 행으로 배치 */
+    width: 100%;
+    max-width: 1400px;
+    justify-content: space-between;
+    text-align: center;
+}
+
+/* li 에서 단설정 - pc - 5단 */
+.port_cover ul li {
+    width: calc(20% - 10px);
+    /* 5단설정, 각 마진값 */
+    margin-bottom: 50px;
+}
+
+.port_cover ul li a img {
+    width: 100%;
+    height: auto;
+}
+
+/* text */
+
+.port_cover ul li p {
+    font-size: 14px;
+    margin-top: 20px;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    /* 길경우 ... */
+    white-space: nowrap;
+    /* 추가 줄바꿈 제어*/
+    word-break: keep-all;
+    /* 단어 단위로 줄바꿈*/
+    overflow: hidden;
+}
+
+.port_cover ul li span.gray {
+    color: #aaa;
+    font-size: 13px;
+}
+
+/* 폿폴 배경 */
+
+ul.port_bg {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+ul.port_bg li {
+    position: absolute;
+}
+
+ul.port_bg li:nth-child(1) {
+    top: 0;
+    left: 0;
+}
+
+ul.port_bg li:nth-child(2) {
+    top: 350px;
+    left: 50px;
+}
+
+ul.port_bg li:nth-child(3) {
+    right: 10%;
+    bottom: 0%;
+}
+
+/* 회사 연락처, 프로젝트 요청서 다운받기 */
+section#redcarpet2 {
+    width: 100%;
+    height: 430px;
+    position: relative;
+    z-index: 5;
+    margin-top: -200px;
+    clear: both;
+    /* 부모요소에 clear: both; 넣으면 float 해제됨 */
+}
+
+/* 왼쪽 투명 배경 */
+section#redcarpet2 .redside {
+    position: absolute;
+    top: 25%;
+    left: 0;
+    width: 100%;
+    height: 500px;
+    background-color: rgba(255, 0, 0, 0.2);
+    transform: skewY(10deg);
+}
+
+/* 오른쪽 빨강 배경 */
+section#redcarpet2 .redrightside {
+    position: absolute;
+    top: 12%;
+    right: 0;
+    width: 100%;
+    height: 600px;
+    background-color: #eb150a;
+    transform: skewY(-15deg);
+    /* 수직으로 기울임 */
+}
+
+.redrightside h2.contact {
+    transform: skewY(15deg) translate(-50%);
+    position: absolute;
+    width: 340px;
+    top: 30%;
+    left: 50%;
+    font-size: 54px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+}
+
+/* 좌우 라인 */
+.redrightside h2.contact::before {
+    content: '';
+    display: block;
+    /* 보여줌 */
+    width: 200px;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    left: -60%;
+    top: 55%;
+}
+
+.redrightside h2.contact::after {
+    content: '';
+    display: block;
+    /* 보여줌 */
+    width: 200px;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    right: -60%;
+    top: 55%;
+}
+
+/* 주소 */
+.redrightside .add {
+    transform: translate(-50%, -50%) skewY(15deg);
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    width: 600px;
+    height: 150px;
+    /* border:1px solid yellow; */
+}
+
+.redrightside .add ul {
+    color: #fff;
+    width: 100%;
+    margin-top: 20px;
+    line-height: 1.6;
+}
+
+.redrightside .add ul li {
+    float: left;
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+.redrightside .add ul li strong {
+    font-size: 18px;
+}
+
+.redrightside .add ul li a {
+    color: #fff;
+}
+
+.redrightside .add ul li a:hover {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* 프로젝트 요청 버튼 */
+.redrightside .pro {
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    transform: translate(-50%, -50%) skewY(15deg);
+    width: 230px;
+    height: 50px;
+    border: 2px solid #fff;
+    text-align-last: right;
+}
+
+/* 책아이콘 */
+.redrightside .pro i {
+    position: absolute;
+    left: 7%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: #fff;
+}
+
+/* text */
+.redrightside .pro a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    line-height: 50px;
+    padding-right: 25px;
+    box-sizing: border-box;
+    /* 라인이나 패딩이 있을 때 넓어지는 형태를 방지 */
+}
+
+/* 지도 */
+#map_cover {
+    position: relative;
+    top: 400px;
+    z-index: -1;
+    width: 100%;
+    height: 800px;
+}
+
+#map_cover .map_view {
+    width: 100%;
+    height: 100%;
+}
+
+#map_cover .map_view iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* ========== footer ========== */
+footer {
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+footer p {
+    line-height: 1.6;
+    font-size: 12px;
+    margin-top: 25px;
+}
+
+footer p a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+footer p a:last-child {
+    color: #eb150a;
+}
+
+
+/* ========== 최대 1400px ========== */
+@media (max-width:1400px) {
+
+    /* pc menu, rightmenu - 가려줌 */
+    #wrap header ul.menu,
+    #wrap header ul.rightmenu li:nth-child(1),
+    #wrap header ul.rightmenu li:nth-child(2) {
+        display: none;
+        /* 가려줌 */
+    }
+
+    /* toggle (햄버거) btn */
+    #wrap header ul.rightmenu li:nth-child(3) {
+        display: block;
+        /* 보여줌 */
+    }
+
+    #wrap header ul.rightmenu li:nth-child(3) a i {
+        font-size: 30px;
+        color: #eb150a;
+        position: absolute;
+        top: 15px;
+        right: 0;
+    }
+
+    /* x버튼과 모바일 메뉴 */
+    ul.m_menu {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        font-weight: bold;
+        background-color: rgba(255, 255, 255, 0.6)
+    }
+
+    ul.m_menu li {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 34px;
+        z-index: 6;
+    }
+
+    ul.m_menu li a {
+        display: block;
+        color: #333;
+    }
+
+    ul.m_menu li a:hover,
+    ul.m_menu li a:focus {
+        color: #eb150a;
+    }
+
+    ul.m_menu li:nth-child(1) {
+        top: 25%;
+    }
+
+    ul.m_menu li:nth-child(2) {
+        top: 40%;
+    }
+
+    ul.m_menu li:nth-child(3) {
+        top: 55%;
+    }
+
+    /* x버튼 */
+    ul.m_menu li:nth-child(4) {
+        top: 30px;
+        left: auto;
+        /* 왼쪽 여백을 가지지 않고 오른쪽 여백이 우선순위가 된다는 것 */
+        right: 55px;
+        transform: translateX(0%);
+        /* 수평 이동이 없음을 의미 */
+    }
+
+    ul.m_menu li:nth-child(4) a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        color: #eb150a;
+    }
+}
+
+/* ========== 4단 - 최대 1250px ==========*/
+@media (max-width:1250px) {
+
+    /* 서비스 - 2단 */
+    #redcarpet .rightside ul {
+        top: 40%;
+        height: 500px;
+    }
+
+    #redcarpet .rightside ul li {
+        width: 50%;
+        height: 240px;
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+
+    #redcarpet .rightside ul li a img {
+        width: 150px;
+    }
+
+    #redcarpet .rightside ul li a span {
+        display: none;
+    }
+
+    /* 4단 설정 */
+    .port_cover ul {
+        width: 93%;
+    }
+
+    .port_cover ul li {
+        width: calc(25% - 10px);
+    }
+
+    /* 폿폴제목줄이기, span 가림 */
+    .port_cover ul li p {
+        font-size: 13px;
+    }
+
+    .port_cover ul li span.gray {
+        display: none;
+    }
+}
+
+/* ========== 3단 - 최대 810px ==========*/
+
+@media (max-width:810px) {
+
+    /* 육각형 사이즈 변경 */
+    .hexagon {
+        width: 500px;
+        top: 70%;
+    }
+
+    .hexagon p {
+        font-size: 80px;
+        top: 26%;
+    }
+
+    .hexagon p span {
+        font-size: 16px;
+    }
+
+    /* 제목에 라인 가리기 */
+    .rightside h2.service::before,
+    .rightside h2.service::after,
+    .cover h2.pf::before,
+    .cover h2.pf::after,
+    .redrightside h2.contact::before,
+    .redrightside h2.contact::after {
+        display: none;
+    }
+
+    /* 폿폴 3단 */
+    .port_cover ul li {
+        width: calc(33.33% - 10px);
+    }
+}
+
+
+
+/* ========== 2단 - 최대 650px ==========*/
+
+@media (max-width:650px) {
+
+    /* 폰트 사이즈 변경 */
+    .rightside h2.service,
+    .rightside h2.service,
+
+    .cover h2.pf,
+    .cover h2.pf,
+
+    .redrightside h2.contact,
+    .redrightside h2.contact {
+        font-size: 40px;
+    }
+
+ /* 서비스 4종 배치 */
+
+    /* 서비스 제목 */
+    .rightside h2.service {
+        margin-top: -20px;
+    }
+
+    #redcarpet .rightside ul {
+        margin-top: -70px;
+    }
+
+    #redcarpet .rightside ul li a strong {
+        font-size: 18px;
+    }
+
+    /* 폿폴 2단 */
+    .port_cover ul li {
+        width: calc(50% - 10px);
+    }
+
+    /* 연락처 중앙정렬 */
+    .redrightside .add {
+        width: 100%;
+    }
+
+    .redrightside .add ul li {
+        float: none;
+        /* float: left 없음 */
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .redrightside .pro {
+        top: 77%;
+    }
+
+    footer {
+        overflow: hidden;
+    }
+}
